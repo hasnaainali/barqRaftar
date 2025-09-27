@@ -15,12 +15,12 @@ export default function Financing() {
 
                     <div className="hero-visual" aria-hidden="true">
                         <img
-                            src="/images/business-account-banner.png"
+                            src={`${process.env.PUBLIC_URL}/images/business-account-banner.png`}
                             alt="Business Account Banner"
                             className="hero-banner-img"
                         />
                         <img
-                            src="/images/business-account-img.png"
+                            src={`${process.env.PUBLIC_URL}/images/business-account-img.png`}
                             alt="Business Account Layer"
                             className="hero-layer-img"
                         />
@@ -40,7 +40,7 @@ export default function Financing() {
                     </div>
                     <div className="unlock-right" aria-hidden="true">
                         <img
-                            src="/images/instantPayout.png"
+                            src={`${process.env.PUBLIC_URL}/images/instantPayout.png`}
                             alt="Instant Payout Banner"
                             className="unlock-banner-img"
                         />
@@ -80,7 +80,7 @@ export default function Financing() {
                     </div>
                     <div className="feature-image">
                         <img
-                            src="/images/mobile-revenue.png"
+                            src={`${process.env.PUBLIC_URL}/images/mobile-revenue.png`}
                             alt="Revenue Financing"
                             className="feature-img"
                         />
@@ -92,7 +92,7 @@ export default function Financing() {
                 <div className="container feature">
                     <div className="feature-image">
                         <img
-                            src="/images/graph.png"
+                            src={`${process.env.PUBLIC_URL}/images/graph.png`}
                             alt="Instant Payment Transfer"
                             className="feature-img"
                         />
@@ -120,7 +120,7 @@ export default function Financing() {
                     </div>
                     <div className="feature-image">
                         <img
-                            src="/images/NON_EQUITY_CAPITAL.png"
+                            src={`${process.env.PUBLIC_URL}/images/NON_EQUITY_CAPITAL.png`}
                             alt="Non-Equity Capital"
                             className="feature-img"
                         />

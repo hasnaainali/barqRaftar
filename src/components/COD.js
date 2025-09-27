@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from "react-slick";
@@ -16,48 +16,43 @@ import {
 } from "chart.js";
 import './COD.css';
 
+// upfront steps)
 const upfrontSteps = [
   {
-    title: "Instant upfront payments",
     text: "Book Parcels with PostEx",
-    image: "/images/upfrontImg1.png",
-    gradient: true,
+    image: `${process.env.PUBLIC_URL}/images/upfrontImg1.png`,
   },
   {
-    title: "How Upfront Payments Work",
     text: "PostEx Picks Your Parcel from Doorstep",
-    image: "/images/upfrontImg2.png",
-    gradient: false,
+    image: `${process.env.PUBLIC_URL}/images/upfrontImg2.png`,
   },
   {
-    title: "Upfront Payment Transferred Instantly",
-    text: "",
-    image: "/images/upfrontImg3.png",
-    gradient: false,
+    text: "Upfront Payment Transferred Instantly",
+    image: `${process.env.PUBLIC_URL}/images/upfrontImg3.png`,
   },
 ];
 
 const featuresData = [
   {
-    icon: "/images/feature_same_day_delivery.svg",
+    icon: `${process.env.PUBLIC_URL}/images/feature_same_day_delivery.svg`,
     title: "Same Day Delivery",
     description:
       "Experience fast and reliable service with Same Day Delivery, ensuring happy customers and seamless operations."
   },
   {
-    icon: "/images/feature_nationalwide_coverage.svg",
+    icon: `${process.env.PUBLIC_URL}/images/feature_nationalwide_coverage.svg`,
     title: "Nationwide Coverage",
     description:
       "We cover the entire country, ensuring your items reach their destination hassle-free."
   },
   {
-    icon: "/images/feature_flexible_pricing.svg",
+    icon: `${process.env.PUBLIC_URL}/images/feature_flexible_pricing.svg`,
     title: "Flexible Pricing",
     description:
       "Adjust costs to fit your budget with customizable options and personalized payment plans."
   },
   {
-    icon: "/images/feature_easy_instalment.svg",
+    icon: `${process.env.PUBLIC_URL}/images/feature_easy_instalment.svg`,
     title: "Easy Integration",
     description:
       "Instantly integrate our user-friendly APIs with any e-commerce platform for a hassle-free setup."
@@ -65,41 +60,31 @@ const featuresData = [
 ];
 
 const integrations = [
-  { img: "/images/andriod.png", alt: "Android" },
-  { img: "/images/IOS_logo.webp", alt: "iOS" },
-  { img: "/images/magento.png", alt: "Magento" },
-  { img: "/images/woocommerce.png", alt: "WooCommerce" },
-  { img: "/images/shopify.png", alt: "Shopify" },
+  {
+    img: `${process.env.PUBLIC_URL}/images/andriod.png`,
+    alt: "Android"
+  },
+  {
+    img: `${process.env.PUBLIC_URL}/images/IOS_logo.webp`,
+    alt: "iOS"
+  },
+  {
+    img: `${process.env.PUBLIC_URL}/images/magento.png`,
+    alt: "Magento"
+  },
+  {
+    img: `${process.env.PUBLIC_URL}/images/woocommerce.png`,
+    alt: "WooCommerce"
+  },
+  {
+    img: `${process.env.PUBLIC_URL}/images/shopify.png`,
+    alt: "Shopify"
+  },
 ];
 
 const COD = () => {
-  const sectionRef = useRef();
-  const [visibleStep, setVisibleStep] = useState(0);
   const pieChartRef = useRef(null);
   const lineChartRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const stepIndex = parseInt(entry.target.dataset.index);
-            setVisibleStep(stepIndex);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    sectionRef.current
-      .querySelectorAll(".upfront-bullet")
-      .forEach((el, idx) => {
-        el.dataset.index = idx;
-        observer.observe(el);
-      });
-
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const ctxPie = document.getElementById("pie-chart");
@@ -148,7 +133,6 @@ const COD = () => {
       });
     }
 
-    // Line Chart (Growth)
     if (ctxLine) {
       lineChartRef.current = new Chart(ctxLine, {
         type: "line",
@@ -214,7 +198,9 @@ const COD = () => {
             </p>
           </div>
           <div className="cod-feature-image">
-            <img src="/images/map-video-2.gif" alt="COD Payments" className="cod-feature-img" />
+            <img
+              src={`${process.env.PUBLIC_URL}/images/map-video-2.gif`}
+              alt="COD Payments" className="cod-feature-img" />
           </div>
         </div>
       </section>
@@ -238,46 +224,23 @@ const COD = () => {
         </div>
       </section>
 
-      {/* Upfront Payment Scroll Section */}
+      {/* Upfront Payment Section */}
       <section className="upfront-section">
-        <div className="upfront-inner" ref={sectionRef}>
-          <div className="upfront-left">
-            {upfrontSteps.map((step, index) => (
-              <div
-                className={`upfront-bullet ${visibleStep >= index ? "active" : ""}`}
-                key={index}
-              >
-                <span className="bullet-circle"></span>
-                <div className="bullet-text">
-                  <h4
-                    style={{
-                      fontSize: step.gradient ? "14px" : "23px",
-                      textTransform: step.gradient ? "uppercase" : "none",
-                      background: step.gradient
-                        ? "linear-gradient(90deg, #00DF9A 0%, rgba(2,223,156,.993) 35%, rgba(90,219,237,.87) 66%, rgba(90,219,237,.65) 117%)"
-                        : "none",
-                      WebkitBackgroundClip: step.gradient ? "text" : "unset",
-                      WebkitTextFillColor: step.gradient ? "transparent" : "#000",
-                    }}
-                  >
-                    {step.text || step.title}
-                  </h4>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="upfront-inner">
+          <h3 className="upfront-heading">Instant upfront payments</h3>
 
-          {/* Right stacked images */}
-          <div className="upfront-right">
-            {upfrontSteps.map((step, index) => (
-              <img
-                key={index}
-                src={step.image}
-                alt={step.title}
-                className={`image image${index + 1} ${visibleStep === index ? "visible" : ""}`}
-              />
-            ))}
-          </div>
+          {upfrontSteps.map((step, index) => (
+            <div className="upfront-row" key={index}>
+              <div className="upfront-text">
+                <span className="bullet-circle"></span>
+                <p>{step.text}</p>
+              </div>
+              <div className="upfront-image">
+                <img src={step.image} alt={step.text} />
+              </div>
+            </div>
+          ))}
+
         </div>
       </section>
 

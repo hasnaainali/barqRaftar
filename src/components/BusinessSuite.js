@@ -28,7 +28,8 @@ function BusinessSuite() {
                         </div>
                         <div className="image-content overflow-hidden relative">
                             <img
-                                src="/images/mobile.png"
+                                src={`${process.env.PUBLIC_URL}/images/mobile.png`}
+
                                 alt="Mobile and Desktop interfaces"
                                 className="mockup-img w-80 z-30"
                             />
@@ -39,7 +40,10 @@ function BusinessSuite() {
                 <section className="complete-suite-section">
                     <div className="container-flex">
                         <div className="image-content">
-                            <img src="/images/business-suite-mockup.png" alt="Business suite dashboard" className="mockup-img" />
+                            <img
+                                src={`${process.env.PUBLIC_URL}/images/business-suite-mockup.png`}
+
+                                alt="Business suite dashboard" className="mockup-img" />
                         </div>
                         <div className="text-content">
                             <h2>Complete Business Suite</h2>
@@ -97,21 +101,30 @@ function BusinessSuite() {
                     <div className="container-flex">
                         <div className="card">
                             <div className="card-header">
-                                <img src="/images/feature1.svg" alt="Fast icon" className="icon" />
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/images/feature1.svg`}
+
+                                    alt="Fast icon" className="icon" />
                                 <h4 className="card-title">Fast</h4>
                             </div>
                             <p className="card-text">Empower your business with instant payments directly to your account, optimizing your cash flow.</p>
                         </div>
                         <div className="card">
                             <div className="card-header">
-                                <img src="/images/feature2.svg" alt="Seamless icon" className="icon" />
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/images/feature2.svg`}
+
+                                    alt="Seamless icon" className="icon" />
                                 <h4 className="card-title">Seamless</h4>
                             </div>
                             <p className="card-text">Don't put your business on hold while waiting for payments. Access your funds on the same day as delivery.</p>
                         </div>
                         <div className="card">
                             <div className="card-header">
-                                <img src="/images/feature3.svg" alt="Transparent icon" className="icon" />
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/images/feature3.svg`}
+
+                                    alt="Transparent icon" className="icon" />
                                 <h4 className="card-title">Transparent</h4>
                             </div>
                             <p className="card-text">Gain comprehensive visibility into your finances to prioritize growth and enhance the financial health of your business.</p>

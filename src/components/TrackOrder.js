@@ -7,7 +7,7 @@ function TrackOrder() {
       <div className="trackorder-banner">
         <div className="overlay"></div>
         <img
-          src="/images/postex-rider.png"
+          src={`${process.env.PUBLIC_URL}/images/postex-rider.png`}
           alt="PostEx Rider"
           className="rider-banner-img"
         />
@@ -36,7 +36,7 @@ function TrackOrder() {
             />
             <button className="track-btn">
               <img
-                src="/images/track-icon.svg"
+                src={`${process.env.PUBLIC_URL}/images/track-icon.svg`}
                 alt="Track"
                 className="track-icon"
               />

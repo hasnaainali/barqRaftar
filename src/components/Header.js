@@ -7,7 +7,7 @@ function Header() {
     <header className="header">
       <div className="logo">
         <img
-          src="/images/barqRaftar-logo.png"
+          src={`${process.env.PUBLIC_URL}/images/barqRaftar-logo.png`}
           alt="BarqRaftar Logo"
           className="logo-img"
         />

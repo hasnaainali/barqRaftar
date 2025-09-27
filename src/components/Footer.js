@@ -7,12 +7,12 @@ function Footer() {
       {/* Left */}
       <div className="footer-col">
         <img
-          src="/images/barqRaftar-logo.png"
+          src={`${process.env.PUBLIC_URL}/images/barqRaftar-logo.png`}
           alt="BarqRaftar Logo"
           className="footer-logo light-logo"
         />
         <img
-          src="/images/barqRaftar-logo.png"
+          src={`${process.env.PUBLIC_URL}/images/barqRaftar-logo.png`}
           alt="BarqRaftar Logo"
           className="footer-logo dark-logo"
         />
@@ -33,7 +33,9 @@ function Footer() {
           rel="noreferrer"
           className="footer-link region-link"
         >
-          <img src="uae-logo.png" alt="UAE Logo" className="region-logo" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/uae-logo.png`}
+            alt="UAE Logo" className="region-logo" />
           United Arab Emirates
         </a>
 
@@ -43,7 +45,9 @@ function Footer() {
           rel="noreferrer"
           className="footer-link region-link"
         >
-          <img src="ksa-logo.png" alt="KSA Logo" className="region-logo" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/ksa-logo.png`}
+            alt="KSA Logo" className="region-logo" />
           Saudi Arabia
         </a>
       </div>
